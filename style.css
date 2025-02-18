@@ -1,0 +1,90 @@
+/* ======================== FONTS =================================== */
+@font-face {
+  font-family: WhoIsMono;
+  src: url("assets/whois-mono.ttf");
+}
+
+/* ===================== GLOBAL STUFF =============================== */
+body {
+  margin: 1rem;
+}
+/* ascii font-size global */
+:root {
+  font-size: 10px;
+  font-family: WhoIsMono, monospace;
+}
+@media screen and (min-width: 700px) {
+  :root {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  :root {
+    font-size: 14px;
+  }
+}
+/* huge screens */
+@media screen and (min-width: 1920px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+/* make selection colorful */
+*:nth-child(3n)::selection {
+  background-color: orange;
+  /* color: white; */
+}
+*:nth-child(3n + 1)::selection {
+  background-color: lightpink;
+  /* color: white; */
+}
+*:nth-child(3n + 2)::selection {
+  background-color: lightgreen;
+  /* color: white; */
+}
+/* all ascii classes should wrap like a pre element */
+.ascii {
+  white-space: pre;
+  font-size: inherit;
+  font-weight: 300;
+  line-height: 1;
+}
+h1, h2 {
+  max-width: 100%;
+  /* margin: 1em 0; */
+  margin: 0;
+}
+p {
+  font-size: inherit;
+  margin: 0;
+  line-height: 1;
+}
+
+/* ========================= LAYOUTING =============================== */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.55rem;
+  flex-wrap: nowrap;
+}
+
+main {
+  min-width: 600px;
+  width: 66%;
+}
+
+@media screen and (max-width: 950px) {
+  .main-container {
+    flex-wrap: wrap;
+  }
+  main {
+    min-width: 100%;
+  }
+}
+
+
+aside {
+  flex: 1;
+  min-width: 33%;
+}
