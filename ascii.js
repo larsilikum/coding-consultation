@@ -32,8 +32,13 @@ const update = () => {
           console.dir(err)
           return;
         }
-        el.innerHTML =
-          text
+        el.innerHTML = text
+        if(el.dataset.oneLine) {
+          const arr = text.split('\n')
+          if(arr.length > 4) {
+            el.innerHTML = arr.slice(0, 4).join('\n')
+          }
+        }
       }
     )
   }
