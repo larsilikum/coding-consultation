@@ -44,7 +44,7 @@ body {
   /* color: white; */
 }
 /* all ascii classes should wrap like a pre element */
-.ascii {
+.ascii, .ascii-image {
   white-space: pre;
   font-size: inherit;
   font-weight: 300;
