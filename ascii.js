@@ -33,10 +33,10 @@ const update = () => {
           return;
         }
         el.innerHTML = text
-        if(el.dataset.oneLine) {
+        if(el.dataset.sliceLines) {
           const arr = text.split('\n')
-          if(arr.length > 4) {
-            el.innerHTML = arr.slice(0, 4).join('\n')
+          if(arr.length > el.dataset.sliceLines) {
+            el.innerHTML = arr.slice(0, el.dataset.sliceLines).join('\n')
           }
         }
       }
@@ -85,7 +85,6 @@ const asciiElements = document.querySelectorAll('.ascii')
 const imageElements = document.querySelectorAll('.ascii-image')
 
 for(const el of asciiElements) {
-  console.log(el.dataset)
   el.dataset.originalText = el.innerText
 }
 
