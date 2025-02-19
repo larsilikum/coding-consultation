@@ -102,3 +102,22 @@ main, aside {
   width: 100%;
   max-width: 1000px;
 }
+
+/* ======================== PRINT ========================= */
+@media print {
+  :root {
+    font-size: 10pt;
+  }
+  aside {
+    display: none;
+  }
+  main {
+    min-width: 100%;
+    height: unset;
+  }
+}
+
+@page {
+  size: 297mm 420mm;
+  margin: 5mm;
+}
