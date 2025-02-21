@@ -11,7 +11,7 @@ body {
 /* ascii font-size global */
 :root {
   font-size: 10px;
-  font-family: WhoIsMono, monospace;
+  font-family: WhoIsMono, monospace !important;
 }
 @media screen and (min-width: 700px) {
   :root {
@@ -50,15 +50,23 @@ body {
   font-weight: 300;
   line-height: 1;
 }
+.ascii {
+  clear: both;
+}
 h1, h2 {
   max-width: 100%;
   /* margin: 1em 0; */
   margin: 0;
 }
-p {
+p, pre {
   font-size: inherit;
   margin: 0;
   line-height: 1;
+}
+
+#qr-code {
+  /* font-weight: 900 !important; */
+  font-size: 5pt;
 }
 
 /* ========================= LAYOUTING =============================== */
@@ -103,7 +111,22 @@ main, aside {
   max-width: 1000px;
 }
 
+#ascii-map {
+  float: left;
+}
+
+#map-qr-code-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 /* ======================== PRINT ========================= */
+@media screen {
+  .only-print {
+    display: none;
+  }
+}
 @media print {
   :root {
     font-size: 10pt;
