@@ -21,7 +21,7 @@ const update = () => {
         // fallback to standard font if no font is defined
         font: el.dataset.font ? el.dataset.font : "Standard",
         horizontalLayout: el.dataset.horizontalLayout ? el.dataset.horizontalLayout : "default",
-        verticalLayout: "full",
+        verticalLayout: el.dataset.verticalLayout ? el.dataset.verticalLayout : "full",
         width: calculateCharacterAmountWidth(el),
         // attempt to break on whitespace
         whitespaceBreak: true,
