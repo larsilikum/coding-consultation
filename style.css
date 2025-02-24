@@ -119,11 +119,14 @@ main, aside {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
   margin-bottom: 2rem;
 }
 
 #qr-code-container {
-  width: min-content;
+  margin-right: 1rem;
+  width: 20rem;
 }
 
 /* ======================== PRINT ========================= */
@@ -142,6 +145,10 @@ main, aside {
   main {
     min-width: 100%;
     height: unset;
+  }
+  #qr-code-container {
+    margin: unset;
+    width: min-content;
   }
 }
 
