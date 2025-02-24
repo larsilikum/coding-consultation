@@ -79,12 +79,12 @@ p, pre {
 
 main {
   min-width: 600px;
-  width: 66%;
+  width: calc(100% - 38rem);
 }
 
 aside {
   flex: 1;
-  min-width: 33%;
+  width: 38rem;
 }
 
 main, aside {
