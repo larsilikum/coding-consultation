@@ -1,5 +1,5 @@
 if (window.location.protocol === "file:") {
-  alert("fetch APi does not support file: protocol.");
+  alert("fetch APi does not support file: protocol.")
 }
 
 figlet.defaults({
@@ -9,8 +9,6 @@ figlet.defaults({
 figlet.preloadFonts([], function () {
 })
 
-// the global font aspect ratio (0.48 for WhoIsMono)
-const fontAspectRatio = 0.48
 
 // update function to fill elements with ascii font in correct width
 const update = () => {
@@ -22,7 +20,8 @@ const update = () => {
         font: el.dataset.font ? el.dataset.font : "Standard",
         horizontalLayout: el.dataset.horizontalLayout ? el.dataset.horizontalLayout : "default",
         verticalLayout: el.dataset.verticalLayout ? el.dataset.verticalLayout : "full",
-        width: calculateCharacterAmountWidth(el),
+        // for the Efti Wall graphics we want the characters to add one extra character which will be cut later
+        width: el.dataset.sliceLines ? calculateCharacterAmountWidth(el) + 12 : calculateCharacterAmountWidth(el),
         // attempt to break on whitespace
         whitespaceBreak: true,
       },
@@ -34,10 +33,11 @@ const update = () => {
         }
         el.innerHTML = text
         if(el.dataset.sliceLines) {
-          const arr = text.split('\n')
-          if(arr.length > el.dataset.sliceLines) {
-            el.innerHTML = arr.slice(0, el.dataset.sliceLines).join('\n')
-          }
+          let arr = text.split('\n')
+          // as we made our efti wall graphic one character longer, we need to get rid of excess ascii characters
+          arr = arr.map(line => line.substring(0, calculateCharacterAmountWidth(el)))
+          el.innerHTML = arr.slice(0, el.dataset.sliceLines).join('\n')
+          
         }
       }
     )
@@ -48,6 +48,7 @@ const update = () => {
 }
 // calculate how many characters fit in the element per line
 const calculateCharacterAmountWidth = el => {
+  if (isPrint) return charLength
   const width = el.getBoundingClientRect().width
   const fontSize = parseInt(window.getComputedStyle(el).fontSize)
   return Math.floor(width / (fontSize * fontAspectRatio))
