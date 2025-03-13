@@ -7,6 +7,7 @@ const charLength = urlParams.print_chars
 // the global font aspect ratio (0.48 for WhoIsMono)
 const fontAspectRatio = 0.48
 
+// WARNING THIS COULD BE A LOT CLEANER, BUT I WAS LAZY
 if (isPrint) {
   // show only print elements
   const onlyPrintElements = document.querySelectorAll('.only-print')
