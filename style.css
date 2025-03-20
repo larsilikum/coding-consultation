@@ -271,6 +271,6 @@ ul {
         transform: translateX(-170rem);
       }
       100% {
-        transform: translateX(-370rem);
+        transform: translateX(-396.5rem); /* PERFECTLY LOOPED TITLE!!*/
       }
     }
