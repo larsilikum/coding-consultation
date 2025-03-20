@@ -86,8 +86,9 @@ main {
 
 aside {
   flex: 1;
-  padding-left: 0.3rem;
+  padding-left: 0.7rem;
   width: 38rem;
+  border-left: dotted black 0.15rem ;
 }
 
 main, aside {
@@ -95,6 +96,9 @@ main, aside {
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+
+
 @media screen and (max-width: 950px) {
   .main-container {
     flex-wrap: wrap;
@@ -138,6 +142,8 @@ main, aside {
   .only-print {
     display: none;
   }
+
+  
 }
 @media print {
   :root {
@@ -150,6 +156,16 @@ main, aside {
     min-width: 100%;
     height: unset;
   }
+
+  #title {
+    display: none !important;
+  }
+
+   #print-title {
+    display: block !important;
+  }
+
+ 
   #qr-code-container {
     margin: unset;
     width: min-content;
@@ -165,9 +181,7 @@ main, aside {
 
 
 
-  #eftiwall, #eftiwall3 {
-    animation: eftiwall-ticker 45s linear infinite;
-  }
+
 
 
   #eftiwall3 {
@@ -175,9 +189,7 @@ main, aside {
     margin-bottom: 1rem;
   }
 
-    #eftiwall2 {
-    animation: eftiwall2-ticker 45s linear infinite;
-  }
+ 
 
   /* für gerade p tags */
   #eftiwall p:nth-child(even), #eftiwall2 p:nth-child(even),  #eftiwall3 p:nth-child(even)  {
@@ -188,29 +200,9 @@ main, aside {
     /* für gerade p tags */
   #eftiwall p:nth-child(odd), #eftiwall2 p:nth-child(odd), #eftiwall3 p:nth-child(odd) {
         animation: ungerade-efti 5s cubic-bezier(1,0,0,1) infinite;
-  }
+  } 
 
 
- @keyframes eftiwall-ticker {
-  0% {
-    transform: translateX(0);
-  }
-
-    100% {
-    transform: translateX(-100vw);
-  }
- } 
-
-
- @keyframes eftiwall2-ticker {
-  0% {
-    transform: translateX(-100vw);
-  }
-
-    100% {
-    transform: translateX(0vw);
-  }
- } 
 
   @keyframes gerade-efti {
     0% {
@@ -266,3 +258,19 @@ li {
 ul {
     padding-left: 0;
 }
+
+    .ticker {
+      display: inline-block;
+      animation: ticker-animation linear infinite;
+    }
+
+
+
+   @keyframes ticker-animation {
+      0% {
+        transform: translateX(-170rem);
+      }
+      100% {
+        transform: translateX(-370rem);
+      }
+    }

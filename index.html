@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coding Selbsthilfe Sprechstunden</title>
+  <title>Coding Selbsthilfe Sprechstunde</title>
   <script
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"
@@ -17,11 +17,12 @@
   <div class="main-container">
     <main>
       
-      <div id="eftiwall"> qertasiofghjklmnbvc qertasiofghjklmnbvc</div>
+      <div id="eftiwall">qertasiofghjklmnbvc</div>
       <br>
-                <p class="ascii" data-font="Double Shorts" >Kommt vorbei zur:</p>      <br>
-      <h1 class="ascii" data-font="Crazy" data-horizontal-layout="controlled smushing" data-vertical-layout="fitted">Coding 
-        Selbsthilfe Sprechstunden</h1>
+                <p class="ascii" data-font="Double Shorts" >Kommt vorbei zur:</p>    <br>
+      <div id="title">CodingSelbsthilfeSprechstunde CodingSelbsthilfeSprechstunde CodingSelbsthilfeSprechstunde</div>
+      <h1 class="ascii" id="print-title" data-font="Crazy" data-horizontal-layout="controlled smushing" data-vertical-layout="fitted">Coding Selbsthilfe Sprechstunde</h1>
+ 
       <!-- <h1 class="ascii" data-font="Alpha" data-horizontal-layout="controlled smushing">Coding</h1>
       <h1 class="ascii" data-font="Crazy" data-horizontal-layout="fitted">Selbsthilfe</h1>
       <h1 class="ascii" data-font="Isometric3" data-horizontal-layout="controlled smushing">Sprechstunde</h1> -->
@@ -29,7 +30,7 @@
       <h2 class="ascii" data-font="Double Shorts" data-vertical-layout="fitted" style="text-align: right;">im KD-Lab</h2>
  
       
-      <div id="eftiwall2"> qertasiofghjklmnbvc qertasiofghjklmnbvc</div>
+      <div id="eftiwall2">cvbnmlkjhgfioasretq</div>
       <br><br>
       <div id="map-qr-code-container">
         <pre id="ascii-map">
@@ -108,7 +109,7 @@
           <p id="print-link" class="only-print">https://coding-sprechstunde.<br>intermedialegestaltung.de</p>
         </div>
       </div>
-    <div id="eftiwall3"> qertasiofghjklmnbvc qertasiofghjklmnbvc</div>
+    <div id="eftiwall3">qertasiofghjklmnbvc</div>
       <p class="ascii" data-font="Hollywood" data-vertical-layout="fitted">jeden Donnerstag Normalwoche <br>9-14__Uhr</p>
     </main>
     <aside>
@@ -132,8 +133,8 @@ Allerdings sind, unabhängig vom Wissensstand, alle bei uns herzlich willkommen!
     <li><a href="setup.zip"  target="_blank">Setup Folder</a></li>
     <li><a href="https://www.codecademy.com/learn/learn-html"  target="_blank">Codecademy HTML</a></li>
     <li><a href="https://www.codecademy.com/learn/learn-css"  target="_blank">Codecademy CSS</a></li>
-    <li><a href="https://www.codecademy.com/learn/learn-css"  target="_blank">Codecademy Beginner JavaScript</a></li>
-        <li><a href="https://www.codecademy.com/learn/learn-css"  target="_blank">Codecademy Fontend-JavaScript / Dom-Manipulation</a></li>
+    <li><a href="https://www.codecademy.com/learn/introduction-to-javascript"  target="_blank">Codecademy Beginner JavaScript</a></li>
+        <li><a href="https://www.codecademy.com/enrolled/courses/build-interactive-websites"  target="_blank">Codecademy Fontend-JavaScript / Dom-Manipulation</a></li>
     <br>
     Code Read & Help
     <li><a href="https://www.w3schools.com/tags/"  target="_blank">W3 HTML Element Reference</a></li>
@@ -178,36 +179,45 @@ Allerdings sind, unabhängig vom Wissensstand, alle bei uns herzlich willkommen!
 <script>
 
   //formatierungen für Eti-Wall-Ticker
-const paragraph1 = document.getElementById('eftiwall');
+  const paragraph1 = document.getElementById('eftiwall');
   paragraph1.innerHTML = [...paragraph1.textContent]
     .map(letter => `<p class="ascii" data-font="Efti Wall">${letter}</p>`)
     .join('');
 
-  
-const paragraph2 = document.getElementById('eftiwall2');
+  const paragraph2 = document.getElementById('eftiwall2');
   paragraph2.innerHTML = [...paragraph2.textContent]
     .map(letter => `<p class="ascii" data-font="Efti Wall">${letter}</p>`)
     .join('');
 
-
-
-const paragraph3 = document.getElementById('eftiwall3');
+  const paragraph3 = document.getElementById('eftiwall3');
   paragraph3.innerHTML = [...paragraph3.textContent]
     .map(letter => `<p class="ascii" data-font="Efti Wall">${letter}</p>`)
     .join('');
 
-//muss erstmal laden, dann stylen
+  // für titel
+  const title = document.getElementById('title');
+  title.innerHTML = [...title.textContent]
+    .map(letter => `<h1 class="ascii" data-font="Crazy">${letter}</h1>`)
+    .join('');
+
+  // Warte auf das Laden der Seite und starte Animation
   window.addEventListener('load', function() {
-  paragraph1.style.display = "flex";
-  paragraph2.style.display = "flex";
-  paragraph3.style.display = "flex";
-});
+    const titleText = title.textContent.trim();
+    const titleWidth = title.offsetWidth;
+    const animationDuration = (titleWidth / 100) + 's';  // Dauer der Animation
 
+    title.style.animationDuration = `${animationDuration}`;
+    title.classList.add('ticker');
 
+    // style die Elemente erst nach dem Laden
+    paragraph1.style.display = "flex";
+    paragraph2.style.display = "flex";
+    paragraph3.style.display = "flex";
+    title.style.display = "flex";
+    document.getElementById('print-title').style.display = "none";  });
 
-
-  // animierter <title>-title ;)
-  const titleText = " Coding Selbsthilfe Sprechstunden ";
+  // Animierte Titelleiste
+  const titleText = "Coding Selbsthilfe Sprechstunden ";
   let position = 0;
 
   function scrollTitle() {
