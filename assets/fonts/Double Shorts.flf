@@ -1,4 +1,4 @@
-flf2a$ 3 3 10 -1 34 0 7999 0
+flf2a$ 3 3 10 -1 36 0 7999 0
 Author : myflix
 Date   : 2004/2/16 15:18:10
 Version: 1.0
@@ -33,6 +33,8 @@ modifier's name is placed on a comment line.
 
 Font modified June 17, 2007 by patorjk 
 This was to widen the space character.
+Font modified March 20, 2025 by larsilikum
+This was to add : and - characters
 $ $#
 $ $#
 $ $##
@@ -72,9 +74,9 @@ O //  #
    #
    #
 // ##
--#
- #
- ##
+   #
+== #
+   ##
    #
    #
 || ##
@@ -111,9 +113,9 @@ O //  #
 9#
  #
  ##
-:#
- #
- ##
+  #
+o #
+o ##
 ;#
  #
  ##
