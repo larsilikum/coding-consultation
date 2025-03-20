@@ -99,3 +99,4 @@ for(const img of imageElements) {
 update() // init
 
 window.onresize = update
+ 
