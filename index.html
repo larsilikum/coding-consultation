@@ -10,7 +10,6 @@
   ></script>
   <script type="text/javascript" src="figlet.js"></script>
   <script src="aalib.js"></script>
-  <script type="text/javascript" src="print.js" defer></script>
   <script type="text/javascript" src="ascii.js" defer></script>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -21,9 +20,9 @@
       <div id="eftiwall">qertasiofghjklmnbvc</div>
       <br>
                 <p class="ascii" data-font="Double Shorts" >Kommt vorbei zur:</p>    <br>
-      <div id="title">CodingSelbsthilfeSprechstunde CodingSelbsthilfeSprechstunde CodingSelbsthilfeSprechstunde</div>
+      <div id="title">*Coding*Selbsthilfe*Sprechstunde*Coding*Selbsthilfe*Sprechstunde*Coding*Selbsthilfe*Sprechstunde</div>
       <h1 class="ascii" id="print-title" data-font="Crazy" data-horizontal-layout="controlled smushing" data-vertical-layout="fitted">Coding Selbsthilfe Sprechstunde</h1>
-
+ 
       <!-- <h1 class="ascii" data-font="Alpha" data-horizontal-layout="controlled smushing">Coding</h1>
       <h1 class="ascii" data-font="Crazy" data-horizontal-layout="fitted">Selbsthilfe</h1>
       <h1 class="ascii" data-font="Isometric3" data-horizontal-layout="controlled smushing">Sprechstunde</h1> -->
@@ -77,41 +76,41 @@
             <span class="only-print"><br><br><br><br><br><br></span>
           </p>
           <pre id="qr-code" class="only-print">
-##############    ######  ####      ##      ##############
-##          ##        ####  ##          ##  ##          ##
-##  ######  ##    ######    ######  ##      ##  ######  ##
-##  ######  ##  ##  ####    ##  ####    ##  ##  ######  ##
-##  ######  ##  ##  ##  ####    ##  ######  ##  ######  ##
-##          ##    ####    ####          ##  ##          ##
+##############    ##############      ##    ##############
+##          ##  ##    ####    ########  ##  ##          ##
+##  ######  ##  ##  ##      ##    ######    ##  ######  ##
+##  ######  ##      ####    ####    ######  ##  ######  ##
+##  ######  ##  ##    ##  ########          ##  ######  ##
+##          ##  ######    ########  ######  ##          ##
 ##############  ##  ##  ##  ##  ##  ##  ##  ##############
-                  ##    ####  ####
-####      ######  ####  ##  ##    ##  ##        ####
-####    ####  ##    ##      ######  ####      ####  ####
-    ####  ####    ##  ####    ######      ####
-##    ##  ##  ##    ####    ######      ####  ##  ##
-##  ##  ##  ##    ####    ########    ####  ####        ##
-####  ##        ######  ##########  ######  ##  ##    ####
-####  ##  ####    ##      ######        ##  ####  ####
-######  ####      ####  ########                ##  ##  ##
-    ######  ######  ##  ##  ##    ##          ##  ####
-########  ##  ####            ####    ############  ######
-####  ##    ##  ##      ########    ####    ##    ##    ##
-##  ######      ##  ####    ##  ##      ##      ##
-##      ################      ######  ############  ######
-                ##  ##  ####  ##        ##      ####
-##############  ##  ##    ######      ####  ##  ######
-##          ##  ##      ####    ##  ######      ##    ##
-##  ######  ##    ##  ######  ##      ##############    ##
-##  ######  ##      ##        ####  ##  ####  ##  ####  ##
-##  ######  ##        ####    ##    ##    ##############
-##          ##  ####  ##              ##  ######  ####  ##
-##############  ########          ##  ##        ##  ##    
+                ######  ##  ####  ####
+####  ##    ####  ##    ######  ##    ##    ######  ####
+    ########  ######    ##      ##      ######    ##    ##
+####    ########    ##    ##    ####  ##  ##############
+##  ####  ##      ####  ##########      ######  ##  ####
+####  ############  ##    ##  ######    ######    ##  ####
+  ####  ##    ########  ##        ##  ######
+######      ####  ##  ####  ##  ####    ##################
+  ####  ####    ##    ########    ##  ####  ##    ##  ##
+##          ##    ##            ####  ####            ##
+  ##      ##    ####  ########  ##        ######  ##    ##
+##  ##      ##  ##  ##  ####            ####  ##      ####
+    ##        ##      ####  ####  ######    ##  ##    ####
+##  ######  ####        ######  ##  ##  ##########  ##
+                ######  ####    ##      ##      ##  ######
+##############  ##  ##    ##      ##    ##  ##  ##    ##
+##          ##            ##  ####      ##      ######
+##  ######  ##      ##  ####      ##    ##########    ####
+##  ######  ##  ######  ##  ##              ##########
+##  ######  ##      ########    ######    ##    ######  ##
+##          ##  ##    ########  ######  ####    ##    ##
+##############  ##            ##  ##    ######  ####  ##
           </pre>
-          <p id="print-link" class="only-print">https://css.<wbr>intermedialegestaltung.de</p>
+          <p id="print-link" class="only-print">https://coding-sprechstunde.<br>intermedialegestaltung.de</p>
         </div>
       </div>
     <div id="eftiwall3">qertasiofghjklmnbvc</div>
-      <p class="ascii" data-font="Hollywood" data-vertical-layout="fitted">jeden Donnerstag Normalwoche <br>9-14__Uhr</p>
+      <p class="ascii" data-font="Hollywood" data-vertical-layout="fitted">jede Normalwoche<br>Donnerstag 9-14_Uhr</p>
     </main>
     <aside>
       <p class="ascii" data-font="Double Shorts">Linksammlung</p>
@@ -205,7 +204,7 @@ Allerdings sind, unabhängig vom Wissensstand, alle bei uns herzlich willkommen!
   window.addEventListener('load', function() {
     const titleText = title.textContent.trim();
     const titleWidth = title.offsetWidth;
-    const animationDuration = (titleWidth / 100) + 's';  // Dauer der Animation
+    const animationDuration = (titleWidth / 130) + 's';  // Dauer der Animation
 
     title.style.animationDuration = `${animationDuration}`;
     title.classList.add('ticker');
