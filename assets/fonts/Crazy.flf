@@ -15,6 +15,8 @@ modifier's name is placed on a comment line.
 
 Font modified June 17, 2007 by patorjk 
 This was to widen the space character.
+Font modified March 20, 2025 by larsilikum
+This was to make a slimmer variant for e in uppercase.
 $        $#
 $        $#
 $        $#
@@ -496,19 +498,19 @@ _______       #
 \_______|/    #
               #
               ##
-                      #
-                      #
-       __.....__      #
-   .-''         '.    #
-  /     .-''"'-.  `.  #
- /     /________\   \ #
- |                  | #
- \    .-------------' #
-  \    '-.____...---. #
-   `.             .'  #
-     `''-...... -'    #
-                      #
-                      ##
+               #
+                #
+      __.__     #
+   -''     '.   #
+  /    .''.  `  #
+ /    /____|  | #
+ |    --------' #
+ \   \      _,. #
+  \   '-._./  | #
+    .       .'  #
+     `'-..-'    #
+                #
+               ##
            #
            #
            #
@@ -1328,7 +1330,7 @@ _________   _...._      #
 |   `'.  |  #
 '   .'|  '/ #
  `-'  `--'  ##
-ß#
+ï¿½#
  #
  #
  #
