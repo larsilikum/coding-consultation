@@ -26,9 +26,7 @@ if(!isPrint) {
   window.addEventListener('load', function() {
     const titleText = title.textContent.trim();
     const titleWidth = title.offsetWidth;
-    const animationDuration = (titleWidth / 130) + 's';  // Dauer der Animation
-  
-    title.style.animationDuration = `${animationDuration}`;
+
     title.classList.add('ticker');
   
     // style die Elemente erst nach dem Laden

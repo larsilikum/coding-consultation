@@ -10,18 +10,14 @@ body {
 }
 /* ascii font-size global */
 :root {
-  font-size: 10px;
+  font-size: 14px;
   font-family: WhoIsMono, monospace !important;
 }
 @media screen and (min-width: 700px) {
-  :root {
-    font-size: 12px;
-  }
+
+
 }
 @media screen and (min-width: 1600px) {
-  :root {
-    font-size: 14px;
-  }
 }
 /* huge screens */
 @media screen and (min-width: 1920px) {
@@ -136,6 +132,32 @@ main::-webkit-scrollbar, aside::-webkit-scrollbar {
   main, aside {
     height: unset;
   }
+
+  aside {
+      border-left: none ;
+      border-top: dotted black 0.15rem ;
+      padding-top: 0.7rem;
+  }
+
+  aside p, ul {
+    margin-left: -0.5rem;
+  }
+
+  body {
+    margin: 0.5rem;
+  }
+
+  p:not(.ascii), ul {
+    font-size: 14px !important;
+        width: 97% !important;
+  }
+  a {
+    font-size: 14px !important;
+  }
+
+  #qr-code-container{
+    width: 97% !important;
+  }
 }
 
 
@@ -230,6 +252,7 @@ main::-webkit-scrollbar, aside::-webkit-scrollbar {
     100% {
     transform: translateY(0rem);
   }
+
 }
 
 @keyframes ungerade-efti {
@@ -243,11 +266,11 @@ main::-webkit-scrollbar, aside::-webkit-scrollbar {
     transform: translateY(1rem);
   }
 }
-
 .ticker {
   display: inline-block;
-  animation: ticker-animation linear infinite;
+  animation: ticker-animation 19s linear infinite;
 }
+
 
 @keyframes ticker-animation {
   0% {
