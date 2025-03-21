@@ -26,7 +26,7 @@ if(!isPrint) {
   window.addEventListener('load', function() {
     const titleText = title.textContent.trim();
     const titleWidth = title.offsetWidth;
-  
+
     title.classList.add('ticker');
   
     // style die Elemente erst nach dem Laden

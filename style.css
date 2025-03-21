@@ -252,6 +252,7 @@ main::-webkit-scrollbar, aside::-webkit-scrollbar {
     100% {
     transform: translateY(0rem);
   }
+
 }
 
 @keyframes ungerade-efti {
@@ -265,11 +266,11 @@ main::-webkit-scrollbar, aside::-webkit-scrollbar {
     transform: translateY(1rem);
   }
 }
-
 .ticker {
   display: inline-block;
   animation: ticker-animation 19s linear infinite;
 }
+
 
 @keyframes ticker-animation {
   0% {
