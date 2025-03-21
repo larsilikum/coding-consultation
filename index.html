@@ -11,6 +11,7 @@
   <script type="text/javascript" src="figlet.js"></script>
   <script src="aalib.js"></script>
   <script type="text/javascript" src="print.js" defer></script>
+  <script type="text/javascript" src="animations.js" defer></script>
   <script type="text/javascript" src="ascii.js" defer></script>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,11 +19,12 @@
   <div class="main-container">
     <main>
       
-      <div id="eftiwall">qertasiofghjklmnbvc</div>
+      <div id="eftiwall" class="eftiwall">qertasiofghjklmnbvc</div>
       <br>
-                <p class="ascii" data-font="Double Shorts" >Kommt vorbei zur:</p>    <br>
+      <p class="ascii" data-font="Double Shorts" >Kommt vorbei zur:</p>
+      <br>
       <div id="title">*Coding*Selbsthilfe*Sprechstunde*Coding*Selbsthilfe*Sprechstunde*Coding*Selbsthilfe*Sprechstunde</div>
-      <h1 class="ascii" id="print-title" data-font="Crazy" data-horizontal-layout="controlled smushing" data-vertical-layout="fitted">Coding Selbsthilfe Sprechstunde</h1>
+      <h1 class="ascii" id="print-title" data-font="Crazy" data-horizontal-layout="controlled smushing" data-vertical-layout="fitted">Coding Selbsthilfe* SprEchstundE</h1>
  
       <!-- <h1 class="ascii" data-font="Alpha" data-horizontal-layout="controlled smushing">Coding</h1>
       <h1 class="ascii" data-font="Crazy" data-horizontal-layout="fitted">Selbsthilfe</h1>
@@ -31,7 +33,7 @@
       <h2 class="ascii" data-font="Double Shorts" data-vertical-layout="fitted" style="text-align: right;">im KD-Lab</h2>
  
       
-      <div id="eftiwall2">cvbnmlkjhgfioasretq</div>
+      <div id="eftiwall2" class="eftiwall">cvbnmlkjhgfioasretq</div>
       <br><br>
       <div id="map-qr-code-container">
         <pre id="ascii-map">
@@ -110,7 +112,7 @@
           <p id="print-link" class="only-print">https://coding-sprechstunde.<br>intermedialegestaltung.de</p>
         </div>
       </div>
-    <div id="eftiwall3">qertasiofghjklmnbvc</div>
+    <div id="eftiwall3" class="eftiwall">qertasiofghjklmnbvc</div>
       <p class="ascii" data-font="Hollywood" data-vertical-layout="fitted">jede Normalwoche<br>Donnerstag 9-14_Uhr</p>
     </main>
     <aside>
@@ -177,56 +179,3 @@ Allerdings sind, unabhängig vom Wissensstand, alle bei uns herzlich willkommen!
   </div>
 </body>
 </html>
-<script>
-
-  //formatierungen für Eti-Wall-Ticker
-  const paragraph1 = document.getElementById('eftiwall');
-  paragraph1.innerHTML = [...paragraph1.textContent]
-    .map(letter => `<p class="ascii" data-font="Efti Wall">${letter}</p>`)
-    .join('');
-
-  const paragraph2 = document.getElementById('eftiwall2');
-  paragraph2.innerHTML = [...paragraph2.textContent]
-    .map(letter => `<p class="ascii" data-font="Efti Wall">${letter}</p>`)
-    .join('');
-
-  const paragraph3 = document.getElementById('eftiwall3');
-  paragraph3.innerHTML = [...paragraph3.textContent]
-    .map(letter => `<p class="ascii" data-font="Efti Wall">${letter}</p>`)
-    .join('');
-
-  // für titel
-  const title = document.getElementById('title');
-  title.innerHTML = [...title.textContent]
-    .map(letter => `<h1 class="ascii" data-font="Crazy">${letter}</h1>`)
-    .join('');
-
-  // Warte auf das Laden der Seite und starte Animation
-  window.addEventListener('load', function() {
-    const titleText = title.textContent.trim();
-    const titleWidth = title.offsetWidth;
-    const animationDuration = (titleWidth / 130) + 's';  // Dauer der Animation
-
-    title.style.animationDuration = `${animationDuration}`;
-    title.classList.add('ticker');
-
-    // style die Elemente erst nach dem Laden
-    paragraph1.style.display = "flex";
-    paragraph2.style.display = "flex";
-    paragraph3.style.display = "flex";
-    title.style.display = "flex";
-    document.getElementById('print-title').style.display = "none";  });
-
-  // Animierte Titelleiste
-  const titleText = "Coding Selbsthilfe Sprechstunden ";
-  let position = 0;
-
-  function scrollTitle() {
-    document.title = titleText.substring(position) + titleText.substring(0, position);
-    position = (position + 1) % titleText.length;
-    setTimeout(scrollTitle, 100); 
-  }
-
-  scrollTitle();
-
-</script>
