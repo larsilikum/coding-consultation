@@ -10,18 +10,14 @@ body {
 }
 /* ascii font-size global */
 :root {
-  font-size: 10px;
+  font-size: 14px;
   font-family: WhoIsMono, monospace !important;
 }
 @media screen and (min-width: 700px) {
-  :root {
-    font-size: 12px;
-  }
+
+
 }
 @media screen and (min-width: 1600px) {
-  :root {
-    font-size: 14px;
-  }
 }
 /* huge screens */
 @media screen and (min-width: 1920px) {
@@ -43,6 +39,7 @@ body {
   background-color: lightgreen;
   /* color: white; */
 }
+
 /* all ascii classes should wrap like a pre element */
 .ascii, .ascii-image {
   white-space: pre;
@@ -50,9 +47,11 @@ body {
   font-weight: 300;
   line-height: 1;
 }
+
 .ascii {
   clear: both;
 }
+
 h1, h2 {
   max-width: 100%;
   /* margin: 1em 0; */
@@ -69,6 +68,24 @@ p, pre {
 #qr-code {
   font-weight: bold;
   font-size: 5pt;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+    padding-left: 0;
 }
 
 /* ========================= LAYOUTING =============================== */
@@ -95,9 +112,13 @@ main, aside {
   height: calc(100dvh - 2rem);
   overflow-y: auto;
   overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-
+main::-webkit-scrollbar, aside::-webkit-scrollbar {
+  display: none; 
+}
 
 @media screen and (max-width: 950px) {
   .main-container {
@@ -110,6 +131,32 @@ main, aside {
   }
   main, aside {
     height: unset;
+  }
+
+  aside {
+      border-left: none ;
+      border-top: dotted black 0.15rem ;
+      padding-top: 0.7rem;
+  }
+
+  aside p, ul {
+    margin-left: -0.5rem;
+  }
+
+  body {
+    margin: 0.5rem;
+  }
+
+  p:not(.ascii), ul {
+    font-size: 14px !important;
+        width: 97% !important;
+  }
+  a {
+    font-size: 14px !important;
+  }
+
+  #qr-code-container{
+    width: 97% !important;
   }
 }
 
@@ -149,9 +196,11 @@ main, aside {
   :root {
     font-size: 10pt;
   }
+  
   aside {
     display: none;
   }
+
   main {
     min-width: 100%;
     height: unset;
@@ -161,10 +210,9 @@ main, aside {
     display: none !important;
   }
 
-   #print-title {
+  #print-title {
     display: block !important;
   }
-
  
   #qr-code-container {
     margin: unset;
@@ -177,100 +225,57 @@ main, aside {
   margin: 5mm;
 }
 
+/* ========================= ANIMATIONS ================================= */
 
+#eftiwall3 {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
 
+/* für gerade p tags */
+.eftiwall p:nth-child(even){
+  animation: gerade-efti 5s cubic-bezier(1,0,0,1) infinite;
+}
 
+/* für gerade p tags */
+.eftiwall p:nth-child(odd) {
+  animation: ungerade-efti 5s cubic-bezier(1,0,0,1) infinite;
+} 
 
-
-
-
-  #eftiwall3 {
-    margin-top: -1rem;
-    margin-bottom: 1rem;
+@keyframes gerade-efti {
+  0% {
+    transform: translateY(0rem);
   }
-
- 
-
-  /* für gerade p tags */
-  #eftiwall p:nth-child(even), #eftiwall2 p:nth-child(even),  #eftiwall3 p:nth-child(even)  {
-
-    animation: gerade-efti 5s cubic-bezier(1,0,0,1) infinite;
+      50% {
+    transform: translateY(1rem);
   }
-
-    /* für gerade p tags */
-  #eftiwall p:nth-child(odd), #eftiwall2 p:nth-child(odd), #eftiwall3 p:nth-child(odd) {
-        animation: ungerade-efti 5s cubic-bezier(1,0,0,1) infinite;
-  } 
-
-
-
-  @keyframes gerade-efti {
-    0% {
-      transform: translateY(0rem);
-    }
-       50% {
-      transform: translateY(1rem);
-    }
-      100% {
-      transform: translateY(0rem);
-    }
+    100% {
+    transform: translateY(0rem);
   }
+}
 
-    @keyframes ungerade-efti {
-    0% {
-      transform: translateY(1rem);
-    }
-       50% {
-      transform: translateY(0rem);
-    }
-      100% {
-      transform: translateY(1rem);
-    }
+@keyframes ungerade-efti {
+  0% {
+    transform: translateY(1rem);
   }
-
-
-
-main::-webkit-scrollbar, aside::-webkit-scrollbar {
-  display: none; 
+      50% {
+    transform: translateY(0rem);
+  }
+    100% {
+    transform: translateY(1rem);
+  }
 }
 
-main, aside {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.ticker {
+  display: inline-block;
+  animation: ticker-animation 19s linear infinite;
 }
 
-
-
-a {
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
+@keyframes ticker-animation {
+  0% {
+    transform: translateX(-170rem);
+  }
+  100% {
+    transform: translateX(-396.5rem); /* PERFECTLY LOOPED TITLE!!*/
+  }
 }
-
-a:hover {
-  text-decoration: underline;
-}
-
-li {
-  list-style: none;
-}
-
-ul {
-    padding-left: 0;
-}
-
-    .ticker {
-      display: inline-block;
-      animation: ticker-animation linear infinite;
-    }
-
-
-
-   @keyframes ticker-animation {
-      0% {
-        transform: translateX(-170rem);
-      }
-      100% {
-        transform: translateX(-396.5rem); /* PERFECTLY LOOPED TITLE!!*/
-      }
-    }
