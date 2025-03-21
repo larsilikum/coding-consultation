@@ -30,4 +30,6 @@ if (isPrint) {
   const printTitle = document.querySelector('#print-title')
   printTitle.style.display = 'block'
 
+  const subheadline = document.querySelector('#subheadline')
+  subheadline.style.textAlign = 'left'
 }
