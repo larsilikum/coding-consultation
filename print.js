@@ -4,6 +4,7 @@ const urlParams = new Proxy(new URLSearchParams(window.location.search), {
 })
 const isPrint = urlParams.print_chars !== null
 const charLength = urlParams.print_chars
+const date = urlParams.date
 // the global font aspect ratio (0.48 for WhoIsMono)
 const fontAspectRatio = 0.48
 
@@ -32,4 +33,12 @@ if (isPrint) {
 
   const subheadline = document.querySelector('#subheadline')
   subheadline.style.textAlign = 'left'
+
+  if(date) {
+    const dateEl = document.querySelector('#date')
+    dateEl.innerText = date
+  }
+
+  const sidebar = document.querySelector('#sidebar')
+  sidebar.style.display = 'none'
 }
