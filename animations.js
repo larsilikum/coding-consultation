@@ -47,3 +47,32 @@ if(!isPrint) {
 
   scrollTitle();
 
+  const map = document.querySelector('#ascii-map')
+  const text = map.textContent
+  const textArray = [...text]
+  const indeces = textArray.map((char, index) => ({ char, index})).filter(c => c.char === '~' || c.char === '°')
+  
+  function animateMap() {
+    const randomIndeces = indeces.filter(c => Math.random() * 22 < Math.random())
+
+    const bubbles = textArray.map((char, index) => ({ char, index})).filter(c => c.char === 'o' && indeces.findIndex(char => char.index === c.index) >= 0)
+    const expandedBubbles = textArray.map((char, index) => ({ char, index})).filter(c => c.char === '°')
+    const poppedBubbles = textArray.map((char, index) => ({ char, index})).filter(c => c.char === '*')
+    for (const c of randomIndeces) {
+      textArray[c.index] = 'o'
+    }
+    for (const bubble of bubbles) {
+      textArray[bubble.index] = '°'
+    }
+    for (const bubble of expandedBubbles) {
+      textArray[bubble.index] = '*'
+    }
+    for (const pBubble of poppedBubbles) {
+      textArray[pBubble.index] = '~'
+    }
+    map.textContent = textArray.join('')
+    setTimeout(animateMap, 150)
+  }
+
+  animateMap()
+
