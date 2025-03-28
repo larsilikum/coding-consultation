@@ -3,28 +3,17 @@ async function getData() {
   try {
     //  google Sheet  API
     const res = await fetch('https://script.google.com/macros/s/AKfycbxrkKyW0nwZjW3FO0r1mTZgeByurobCKFMMLorvntETY1umvSOQFLjHGfvSi8WZO6Kg/exec');
-    
-    const   { existingOptions }  = await res.json();
 
-   const date = new Date();
-    const day = date.getDate();
-    const month = date.getMonth();
-    const year = date.getFullYear();
-    const dateformatted = `${day}.${month}.${year}`;
-
-
-        existingOptions.forEach((existingOption) => {
-        let optionday = parseInt(existingOption.substr);
-        console.log (optionday);
-        }
-        );
+    const { availableSlots }  = await res.json();
 
  
 
-        console.log( existingOptions );
+ 
+
+        console.log(availableSlots);
 for (let i = 0; i < 12; i++) {
-    if (i < existingOptions.length) {
-        document.getElementById("termine").innerHTML += ` ${existingOptions[i]}<br> `;
+    if (i < availableSlots.length) {
+        document.getElementById("termine").innerHTML += ` ${availableSlots[i]}<br> `;
     }
 }
 
