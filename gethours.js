@@ -25,8 +25,6 @@ const slotdayNext = Number(slotdayNextString);
               document.getElementById("termine").innerHTML += `<br> `;
     }
 
-
-
   
 };
   
