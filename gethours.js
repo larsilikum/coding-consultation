@@ -21,7 +21,7 @@ const slotdayNextString = availableSlots[i + 1 ][0] + availableSlots[i + 1 ][1];
 const slotdayNext = Number(slotdayNextString);
 
    
-    if (i < availableSlots.length && slotday < slotdayNext) {
+    if (i < availableSlots.length && slotday !== slotdayNext) {
               document.getElementById("termine").innerHTML += `<br> `;
     }
 
