@@ -3,7 +3,7 @@ function setSunset() {
   const hour = now.getHours();
   const minute = now.getMinutes();
 
-  const dayY = -550;
+  const dayY = -450;
   const nightY = 0;
 
   let currentMode;
@@ -13,8 +13,8 @@ function setSunset() {
   if (fractionalHour <= 12) {
     currentMode = nightY + (dayY - nightY) * (fractionalHour / 12);
   } else if (hour === 0) {
-    currentMode = -450;
-  } else if (hour === 12 && 13) {
+    currentMode = 0;
+  } else if (hour === 12) {
     currentMode = -450;
   } else {
     currentMode = dayY - (dayY - nightY) * ((fractionalHour - 12) / 12);
