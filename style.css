@@ -23,7 +23,7 @@ body * :not(#anmelden) {
   left: 0;
   top: 0;
   width: 100vw;
-  height: 450vh;
+  height: 650vh;
   z-index: 100;
   user-select: none;
   pointer-events: none;
@@ -32,12 +32,12 @@ body * :not(#anmelden) {
   background: linear-gradient(
     to bottom,
     black 0vh,
-    black 100vh,
-    rgb(16, 0, 196) 150vh,
-    orange 180vh,
-    rgb(205, 205, 255) 200vh,
-    white 350vh,
-    white 450vh
+    black 200vh,
+    rgb(16, 0, 196) 250vh,
+    orange 280vh,
+    rgb(205, 205, 255) 300vh,
+    white 450vh,
+    white 650vh
   );
   mix-blend-mode: difference;
 }
