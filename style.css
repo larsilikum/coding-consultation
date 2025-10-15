@@ -23,7 +23,7 @@ body * :not(#anmelden) {
   left: 0;
   top: 0;
   width: 100vw;
-  height: 650vh;
+  height: 550vh;
   z-index: 100;
   user-select: none;
   pointer-events: none;
@@ -37,7 +37,7 @@ body * :not(#anmelden) {
     orange 280vh,
     rgb(205, 205, 255) 300vh,
     white 450vh,
-    white 650vh
+    white 550vh
   );
   mix-blend-mode: difference;
 }
