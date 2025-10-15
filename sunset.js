@@ -4,7 +4,7 @@ function setSunset() {
   const minute = now.getMinutes();
 
   const dayY = -350;
-  const nightY = 100;
+  const nightY = 0;
 
   let currentMode;
 
