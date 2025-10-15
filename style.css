@@ -19,7 +19,7 @@ body * :not(#anmelden) {
 
 #sky {
   position: fixed;
-  transition: 1s ease;
+  transition: transform 1s ease;
   left: 0;
   top: 0;
   width: 100vw;
