@@ -8,14 +8,46 @@
 body {
   margin: 1rem;
 }
+
+body * :not(#anmelden) {
+  color: white !important;
+}
+
+#anmelden {
+  color: yellow;
+}
+
+#sky {
+  position: fixed;
+  transition: 1s ease;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 450vh;
+  z-index: 100;
+  user-select: none;
+  pointer-events: none;
+  opacity: 1;
+  transform: translateY(0vh);
+  background: linear-gradient(
+    to bottom,
+    black 0vh,
+    black 100vh,
+    rgb(16, 0, 196) 150vh,
+    orange 180vh,
+    rgb(205, 205, 255) 200vh,
+    white 350vh,
+    white 450vh
+  );
+  mix-blend-mode: difference;
+}
+
 /* ascii font-size global */
 :root {
   font-size: 14px;
   font-family: WhoIsMono, monospace !important;
 }
 @media screen and (min-width: 700px) {
-
-
 }
 @media screen and (min-width: 1600px) {
 }
@@ -41,7 +73,8 @@ body {
 }
 
 /* all ascii classes should wrap like a pre element */
-.ascii, .ascii-image {
+.ascii,
+.ascii-image {
   white-space: pre;
   font-size: inherit;
   font-weight: 300;
@@ -52,14 +85,15 @@ body {
   clear: both;
 }
 
-h1, h2 {
+h1,
+h2 {
   max-width: 100%;
   /* margin: 1em 0; */
   margin: 0;
 }
 
-
-p, pre {
+p,
+pre {
   font-size: inherit;
   margin: 0;
   line-height: 1;
@@ -85,7 +119,7 @@ li {
 }
 
 ul {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 /* ========================= LAYOUTING =============================== */
@@ -105,10 +139,11 @@ aside {
   flex: 1;
   padding-left: 0.7rem;
   width: 38rem;
-  border-left: dotted black 0.15rem ;
+  border-left: dotted black 0.15rem;
 }
 
-main, aside {
+main,
+aside {
   height: calc(100dvh - 2rem);
   overflow-y: auto;
   overflow-x: hidden;
@@ -116,8 +151,9 @@ main, aside {
   scrollbar-width: none;
 }
 
-main::-webkit-scrollbar, aside::-webkit-scrollbar {
-  display: none; 
+main::-webkit-scrollbar,
+aside::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and (max-width: 950px) {
@@ -129,17 +165,19 @@ main::-webkit-scrollbar, aside::-webkit-scrollbar {
     overflow: hidden;
     height: unset;
   }
-  main, aside {
+  main,
+  aside {
     height: unset;
   }
 
   aside {
-      border-left: none ;
-      border-top: dotted black 0.15rem ;
-      padding-top: 0.7rem;
+    border-left: none;
+    border-top: dotted black 0.15rem;
+    padding-top: 0.7rem;
   }
 
-  aside p, ul {
+  aside p,
+  ul {
     margin-left: -0.5rem;
   }
 
@@ -147,19 +185,19 @@ main::-webkit-scrollbar, aside::-webkit-scrollbar {
     margin: 0.5rem;
   }
 
-  p:not(.ascii), ul {
+  p:not(.ascii),
+  ul {
     font-size: 14px !important;
-        width: 97% !important;
+    width: 97% !important;
   }
   a {
     font-size: 14px !important;
   }
 
-  #qr-code-container{
+  #qr-code-container {
     width: 97% !important;
   }
 }
-
 
 #map {
   width: 100%;
@@ -190,14 +228,12 @@ main::-webkit-scrollbar, aside::-webkit-scrollbar {
   .only-print {
     display: none;
   }
-
-  
 }
 @media print {
   :root {
     font-size: 10pt;
   }
-  
+
   aside {
     display: none;
   }
@@ -214,7 +250,7 @@ main::-webkit-scrollbar, aside::-webkit-scrollbar {
   #print-title {
     display: block !important;
   }
- 
+
   #qr-code-container {
     margin: unset;
     width: min-content;
@@ -234,36 +270,35 @@ main::-webkit-scrollbar, aside::-webkit-scrollbar {
 }
 
 /* für gerade p tags */
-.eftiwall p:nth-child(even){
-  animation: gerade-efti 5s cubic-bezier(1,0,0,1) infinite;
+.eftiwall p:nth-child(even) {
+  animation: gerade-efti 5s cubic-bezier(1, 0, 0, 1) infinite;
 }
 
 /* für gerade p tags */
 .eftiwall p:nth-child(odd) {
-  animation: ungerade-efti 5s cubic-bezier(1,0,0,1) infinite;
-} 
+  animation: ungerade-efti 5s cubic-bezier(1, 0, 0, 1) infinite;
+}
 
 @keyframes gerade-efti {
   0% {
     transform: translateY(0rem);
   }
-      50% {
+  50% {
     transform: translateY(1rem);
   }
-    100% {
+  100% {
     transform: translateY(0rem);
   }
-
 }
 
 @keyframes ungerade-efti {
   0% {
     transform: translateY(1rem);
   }
-      50% {
+  50% {
     transform: translateY(0rem);
   }
-    100% {
+  100% {
     transform: translateY(1rem);
   }
 }
@@ -271,7 +306,6 @@ main::-webkit-scrollbar, aside::-webkit-scrollbar {
   display: inline-block;
   animation: ticker-animation 19s linear infinite;
 }
-
 
 @keyframes ticker-animation {
   0% {
