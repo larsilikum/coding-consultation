@@ -1,7 +1,7 @@
 /* ======================== FONTS =================================== */
 @font-face {
   font-family: WhoIsMono;
-  src: url("assets/whois-mono.ttf");
+  src: url("assets/whois-mono_new.ttf");
 }
 
 /* ===================== GLOBAL STUFF =============================== */
@@ -152,10 +152,16 @@ aside {
   scrollbar-width: none;
 }
 
+
 main::-webkit-scrollbar,
 aside::-webkit-scrollbar {
   display: none;
 }
+
+
+  a:hover {
+    pointer: cursor;
+  }
 
 @media screen and (max-width: 950px) {
   .main-container {
@@ -207,6 +213,7 @@ aside::-webkit-scrollbar {
 
 #ascii-map {
   float: left;
+  font-family: WhoIsMono, monospace;
 }
 
 #map-qr-code-container {
