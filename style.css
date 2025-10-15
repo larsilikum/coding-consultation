@@ -139,7 +139,7 @@ aside {
   flex: 1;
   padding-left: 0.7rem;
   width: 38rem;
-  border-left: dotted black 0.15rem;
+  border-left: dotted rgb(255, 255, 255) 0.15rem;
 }
 
 main,
@@ -178,7 +178,7 @@ aside::-webkit-scrollbar {
 
   aside {
     border-left: none;
-    border-top: dotted black 0.15rem;
+    border-top: dotted rgb(255, 255, 255) 0.15rem;
     padding-top: 0.7rem;
   }
 
