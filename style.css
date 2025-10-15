@@ -15,6 +15,7 @@ body * :not(#anmelden) {
 
 #anmelden {
   color: yellow;
+  font-size: 1.8rem !important;
 }
 
 #sky {
@@ -34,8 +35,8 @@ body * :not(#anmelden) {
     black 0vh,
     black 200vh,
     rgb(16, 0, 196) 250vh,
-    orange 280vh,
-    rgb(205, 205, 255) 300vh,
+    rgb(255, 188, 63) 300vh,
+    rgb(205, 205, 255) 310vh,
     white 450vh,
     white 550vh
   );
@@ -172,7 +173,7 @@ aside::-webkit-scrollbar {
 
   aside {
     border-left: none;
-    border-top: dotted rgb(255, 255, 255) 0.15rem;
+    border-top: dotted black 0.15rem;
     padding-top: 0.7rem;
   }
 
