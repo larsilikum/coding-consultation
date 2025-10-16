@@ -17,7 +17,7 @@ function setSunset() {
     }
   } else {
     currentMode = dayY - (dayY - nightY) * ((fractionalHour - 12) / 12);
-    if (hour >= 18) {
+    if (hour >= 19) {
       textShadow = "1px 1px 10px white";
     }
   }
