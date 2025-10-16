@@ -15,7 +15,7 @@ body * :not(#anmelden) {
 
 #anmelden {
   color: yellow;
-  font-size: 1.7rem !important;
+  font-size: 1.6rem !important;
 }
 
 #sky {
@@ -32,15 +32,22 @@ body * :not(#anmelden) {
   transform: translateY(0vh);
   background: linear-gradient(
     to bottom,
-    black 0vh,
-    black 200vh,
+    rgb(6, 0, 29) 0vh,
+    rgb(6, 0, 29) 200vh,
     rgb(16, 0, 196) 250vh,
-    rgb(255, 188, 63) 300vh,
+    rgb(255, 182, 104) 300vh,
     rgb(205, 205, 255) 310vh,
-    white 450vh,
+    rgb(204, 255, 255) 450vh,
     white 550vh
   );
   mix-blend-mode: difference;
+}
+
+.star {
+  position: absolute;
+  opacity: 1;
+  text-shadow: 1px 1px 10px white;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* ascii font-size global */
@@ -61,15 +68,15 @@ body * :not(#anmelden) {
 
 /* make selection colorful */
 *:nth-child(3n)::selection {
-  background-color: orange;
+  background-color: rgb(0, 124, 232);
   /* color: white; */
 }
 *:nth-child(3n + 1)::selection {
-  background-color: lightpink;
+  background-color: rgb(0, 120, 26);
   /* color: white; */
 }
 *:nth-child(3n + 2)::selection {
-  background-color: lightgreen;
+  background-color: rgb(255, 0, 212);
   /* color: white; */
 }
 
@@ -152,16 +159,14 @@ aside {
   scrollbar-width: none;
 }
 
-
 main::-webkit-scrollbar,
 aside::-webkit-scrollbar {
   display: none;
 }
 
-
-  a:hover {
-    pointer: cursor;
-  }
+a:hover {
+  pointer: cursor;
+}
 
 @media screen and (max-width: 950px) {
   .main-container {
