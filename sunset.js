@@ -27,6 +27,8 @@ function setSunset() {
   const sky = document.getElementById("sky");
   if (sky) sky.style.transform = `translateY(${currentMode}vh)`;
 }
+setInterval(setSunset, 60 * 1000);
+
 setSunset();
 
 function createStars(count = 300) {
