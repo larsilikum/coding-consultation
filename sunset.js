@@ -29,6 +29,8 @@ function setSunset() {
 
   const sky = document.getElementById("sky");
   if (sky) sky.style.transform = `translateY(${currentMode}vh)`;
+
+  return hour;
 }
 setInterval(setSunset, 60 * 1000);
 setSunset();
@@ -36,8 +38,6 @@ setSunset();
 //sterne
 const sky = document.getElementById("sky");
 function createStars(count) {
-  if (!sky) return;
-
   if (sky.childElementCount !== count) {
     sky.innerHTML = "";
     for (let i = 0; i < count; i++) {
