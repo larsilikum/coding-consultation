@@ -1,3 +1,4 @@
+//sonnenuntergang
 function setSunset() {
   const now = new Date();
   const hour = now.getHours();
@@ -14,11 +15,13 @@ function setSunset() {
     currentMode = nightY + (dayY - nightY) * (fractionalHour / 12);
     if (hour < 5) {
       textShadow = "1px 1px 10px white";
+      document.getElementById("ghost").style.animation = "ghostandufo 5s ease";
     }
   } else {
     currentMode = dayY - (dayY - nightY) * ((fractionalHour - 12) / 12);
     if (hour >= 19) {
       textShadow = "1px 1px 10px white";
+      document.getElementById("ufo").style.animation = "ghostandufo 5s ease";
     }
   }
 
@@ -28,47 +31,90 @@ function setSunset() {
   if (sky) sky.style.transform = `translateY(${currentMode}vh)`;
 }
 setInterval(setSunset, 60 * 1000);
-
 setSunset();
 
-function createStars(count = 300) {
-  const sky = document.getElementById("sky");
+//sterne
+const sky = document.getElementById("sky");
+function createStars(count) {
   if (!sky) return;
 
-  // clear old stars if any
-  sky.innerHTML = "";
+  if (sky.childElementCount !== count) {
+    sky.innerHTML = "";
+    for (let i = 0; i < count; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
 
-  for (let i = 0; i < count; i++) {
-    const star = document.createElement("div");
-    star.classList.add("star");
+      const chars = ["+", "*", "."];
+      star.textContent = chars[Math.floor(Math.random() * chars.length)];
 
-    const chars = ["+", "*", "."];
-    star.textContent = chars[Math.floor(Math.random() * chars.length)];
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      star.style.left = `${x}%`;
+      star.style.top = `${y}%`;
 
-    const x = Math.random() * 100;
-    const y = Math.random() * 100;
-    star.style.left = `${x}%`;
-    star.style.top = `${y}%`;
+      star.style.fontSize = `${10 + Math.random() * 10}px`;
 
-    star.style.fontSize = `${10 + Math.random() * 10}px`;
-
-    sky.appendChild(star);
+      sky.appendChild(star);
+    }
   }
 }
 
 function animateStars() {
-  const stars = document.querySelectorAll(".star");
+  const stars = sky ? sky.querySelectorAll(".star") : [];
   stars.forEach((star) => {
-    // Twinkle effect
-    const twinkle = Math.random() * 0.5 + 0.5;
+    const twinkleSpeed = 0.02 + Math.random() * 0.03;
+    let twinklePhase = parseFloat(
+      star.dataset.twinklePhase || Math.random() * Math.PI * 2
+    );
+    twinklePhase += twinkleSpeed;
+    star.dataset.twinklePhase = twinklePhase;
+    const twinkle = 0.5 + 0.5 * Math.sin(twinklePhase);
     star.style.opacity = twinkle;
-    // Slight random position drift
-    const driftX = (Math.random() - 0.5) * 1;
-    const driftY = (Math.random() - 0.5) * 1;
+
+    const driftX = (Math.random() - 0.5) * 1.5;
+    const driftY = (Math.random() - 0.5) * 1.5;
     star.style.transform = `translate(${driftX}px, ${driftY}px)`;
   });
+  requestAnimationFrame(animateStars);
 }
 
-// Initialize
 createStars(150);
-setInterval(animateStars, 800);
+animateStars();
+
+//sternschnuppe
+function sternschnuppe() {
+  const hour = setSunset();
+
+  if (hour <= 5 || hour >= 18) {
+    const sternschnuppen = document.querySelectorAll(".sternschnuppe");
+    sternschnuppen.forEach((sternschnuppe) => {
+      function placeSternschnuppe() {
+        const x = Math.random() * 80;
+        const y = Math.random() * 50;
+        sternschnuppe.style.left = `${x}%`;
+        sternschnuppe.style.top = `${y}%`;
+        sternschnuppe.style.opacity = 1;
+
+        const text = sternschnuppe.textContent;
+        sternschnuppe.innerHTML = "";
+        for (let i = 0; i < text.length; i++) {
+          sternschnuppe.innerHTML += `<span>${text[i]}</span>`;
+        }
+
+        const letter = sternschnuppe.querySelectorAll("span");
+        letter.forEach((span, i) => {
+          setTimeout(() => {
+            span.style.opacity = 1;
+            setTimeout(() => {
+              span.style.opacity = 0;
+            }, 400);
+          }, i * 20);
+        });
+      }
+
+      setInterval(placeSternschnuppe, Math.random() * 15000);
+    });
+  }
+}
+
+sternschnuppe();
