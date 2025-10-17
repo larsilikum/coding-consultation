@@ -9,6 +9,11 @@ body {
   margin: 1rem;
 }
 
+html {
+  background-color: black;
+  overflow-x: hidden;
+}
+
 body * :not(#anmelden) {
   color: white !important;
 }
@@ -32,8 +37,8 @@ body * :not(#anmelden) {
   transform: translateY(0vh);
   background: linear-gradient(
     to bottom,
-    rgb(6, 0, 29) 0vh,
-    rgb(6, 0, 29) 200vh,
+    rgb(0, 0, 0) 0vh,
+    rgb(16, 0, 80) 200vh,
     rgb(16, 0, 196) 250vh,
     rgb(255, 182, 104) 300vh,
     rgb(205, 205, 255) 310vh,
@@ -46,13 +51,63 @@ body * :not(#anmelden) {
 .star {
   position: absolute;
   opacity: 1;
+  z-index: 1;
+  color: white;
   text-shadow: 1px 1px 10px white;
-  transition: opacity 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#ufo,
+#ghost {
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: white;
+  z-index: 101;
+  opacity: 0;
+}
+
+@keyframes ghostandufo {
+  0% {
+    opacity: 1;
+    left: 0;
+    top: 0;
+  }
+  25% {
+    left: unset;
+    right: 2.5rem;
+    top: 25vh;
+  }
+  50% {
+    left: 0;
+    right: unset;
+    top: 75vh;
+  }
+  100% {
+    left: 100vw;
+    right: unset;
+    top: 100vh;
+    opacity: 1;
+  }
+}
+
+.sternschnuppe {
+  position: absolute;
+  opacity: 1;
+  z-index: 101;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  text-shadow: 1px 1px 10px white;
+}
+
+.sternschnuppe span {
 }
 
 /* ascii font-size global */
 :root {
   font-size: 14px;
+  color-scheme: light;
   font-family: WhoIsMono, monospace !important;
 }
 @media screen and (min-width: 700px) {
