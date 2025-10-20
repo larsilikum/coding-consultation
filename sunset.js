@@ -16,12 +16,21 @@ function setSunset() {
     if (hour < 5) {
       textShadow = "1px 1px 10px white";
       document.getElementById("ghost").style.animation = "ghostandufo 5s ease";
+
+      setTimeout(() => {
+        document.getElementById("ghost").style.animation = "";
+      }, 5 * 1000);
     }
   } else {
     currentMode = dayY - (dayY - nightY) * ((fractionalHour - 12) / 12);
     if (hour >= 19) {
       textShadow = "1px 1px 10px white";
+
       document.getElementById("ufo").style.animation = "ghostandufo 5s ease";
+
+      setTimeout(() => {
+        document.getElementById("ufo").style.animation = "";
+      }, 5 * 1000);
     }
   }
 
@@ -32,7 +41,7 @@ function setSunset() {
 
   return hour;
 }
-setInterval(setSunset, 60 * 1000);
+setInterval(setSunset, 30 * 1000);
 setSunset();
 
 //sterne
