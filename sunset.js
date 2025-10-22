@@ -1,7 +1,7 @@
 //sonnenuntergang
 function setSunset() {
   const now = new Date();
-  const hour = now.getHours();
+  let hour = now.getHours();
   const minute = now.getMinutes();
 
   const dayY = -450;
@@ -13,24 +13,24 @@ function setSunset() {
 
   if (fractionalHour <= 12) {
     currentMode = nightY + (dayY - nightY) * (fractionalHour / 12);
-    if (hour < 5) {
+    if (hour < 4) {
       textShadow = "1px 1px 10px white";
       document.getElementById("ghost").style.animation = "ghostandufo 5s ease";
 
       setTimeout(() => {
         document.getElementById("ghost").style.animation = "";
-      }, 5 * 1000);
+      }, 60 * 1000);
     }
   } else {
     currentMode = dayY - (dayY - nightY) * ((fractionalHour - 12) / 12);
-    if (hour >= 19) {
+    if (hour >= 20) {
       textShadow = "1px 1px 10px white";
-
-      document.getElementById("ufo").style.animation = "ghostandufo 5s ease";
+      sternschnuppe();
+      document.getElementById("ufo").style.animation = "ghostandufo 8s ease";
 
       setTimeout(() => {
         document.getElementById("ufo").style.animation = "";
-      }, 5 * 1000);
+      }, 60 * 1000);
     }
   }
 
@@ -91,10 +91,8 @@ createStars(150);
 animateStars();
 
 //sternschnuppe
-function sternschnuppe() {
-  const hour = setSunset();
-
-  if (hour <= 5 || hour >= 18) {
+function sternschnuppe(hour) {
+  if (hour <= 3 || hour >= 20) {
     const sternschnuppen = document.querySelectorAll(".sternschnuppe");
     sternschnuppen.forEach((sternschnuppe) => {
       function placeSternschnuppe() {
@@ -121,7 +119,7 @@ function sternschnuppe() {
         });
       }
 
-      setInterval(placeSternschnuppe, Math.random() * 15000);
+      setInterval(placeSternschnuppe, 4000 / Math.random());
     });
   }
 }
