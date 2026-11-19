@@ -71,18 +71,19 @@ Palantir, a Big Tech company at the heart of the Trump administration:
 - Mikrofon / Kamera > Zugriffe nicht benötigter Apps entziehen
 
 
-### Browser: Firefox + uBlock Origin + VPN
+### Browser: Firefox (oder Tor) + uBlock Origin + VPN 
 
 Der Browser sieht fast alles, was du im Netz tust. Ein Wechsel weg von Chrome plus Tracker-Blocker reduziert das Datensammeln deutlich.
 
 - [Firefox](https://www.mozilla.org/de/firefox/) – Open Source. Datenschutz auf "Streng" stellen.
-- [uBlock Origin](https://ublockorigin.com/) – Blockt Werbung und Tracker, in Firefox am besten.
+- [Tor](https://www.torproject.org/de/) – leitet ihren Datenverkehr über das dezentrale Tor-Netzwerk („The Onion Router“), um Identität und Aktivitäten im Internet zu verschleiern.
+- [uBlock Origin](https://ublockorigin.com/) – Blockt Werbung und Tracker, funktioniert in Firefox am besten.
 - VPN – Verbirgt deine IP vor besuchten Seiten (aber nicht vor dem VPN-Anbieter selbst) 
     -[RiseUpVPN (BETA)](https://riseup.net/de/vpn ) ist ein kostenloser, quelloffener VPN-Dienst, der vom autonomen Technik-Kollektiv Riseup.net betrieben wird. Er finanziert sich ausschließlich über freiwillige Spenden.
 - integrierter Firefox VPN: **eher als Zusatz*. Kostenloses, nur im Browser wirkendes VPN, 50 GB pro Monat. Neuer Dienst von Mozilla selbst, Kritiker bemängeln, dass er noch ungeprüft ist.
 
 #### Grenzen:
-- Firefox hängt finanziell an Google
+- Firefox hängt finanziell an Google, Tor wrid mitfinanziert von US-Regierungsbehörden
 - Blocker verhindern nicht, dass Seiten dich per Login, Fingerprint oder IP erkennen.
 - Ein VPN verlagert das Vertrauen vom Internetanbieter zum VPN-Anbieter. 
 
@@ -199,6 +200,12 @@ RewriteRule .* - [F,L]
 
 [A Fly Like Thee](https://webresidencies.akademie-solitude.de/a-fly-like-thee/) von Olivier Jonvaux ist ein Open-Source-Plugin, das KI-Crawler erkennt, ihnen statt der Website-Inhalte vier Verse aus William Blakes Gedicht »The Fly« liefert und jeden Bot durch eine animierte Fliege sichtbar macht.
 
+
+### Nephenes 
+https://github.com/NEPENTHESWEB/nepenthes-py
+- [Nepenthes](https://github.com/NEPENTHESWEB/nepenthes-py) ist ein Open-Source-Tool (eine sogenannte Tarpit bzw. »Teergrube«), das Webcrawler von KI-Unternehmen in ein endloses Labyrinth aus falschen Seiten und bedeutungslosem Text lockt.
+- technisch allerdings im Setup etwas komplitiertzer, wenn ein Tarpit nicht sauber konfiguriert ist, können auch erwünschte Crawler (wie der Googlebot oder Bing) in die Falle tappen.
+
 ## +weitere KI-Gegenschritte
 
 ### Nightshade & Glaze
@@ -224,7 +231,7 @@ Für einen Kompletten ausstieg aus diesen Infrastrukturen empfiehlt es sich Föd
 [Mastodon](https://joinmastodon.org/de) ist ein dezentrales soziales Netzwerk ähnlich wie vielleicht X (Twitter). Nutzer:innen können Beiträge veröffentlichen, anderen folgen und Inhalte teilen. Mastodon besteht aus vielen unabhängigen Servern, sogenannten Instanzen. Nutzer:innen können selbst entscheiden, welcher Instanz sie beitreten möchten. Die Plattform ist kostenlos, werbefrei und Open Source.
 
 #### Wichtig:
-- Home, Lokal und Föderiert sind chronologisch sortiert. Es gibt also keine personalisierte Auswahl nach Likes, Interessen oder Verweildauer. Bei Trends und Vorschlägen gibt es dagegen »algorithmische Elemente«. Aber keine größer, vertsteckter (engagementbasierter) Algorithmus im normalen Feed. (über Drittanbieter kann man sich, dank der offennen API, sich den Content auch algorithmischer kuratieren lassen, siehe z.B:[Fedialgo](https://github.com/rollecode/fedialgo))
+- Home, Lokal und Föderiert sind chronologisch sortiert. Es gibt also keine personalisierte Auswahl nach Likes, Interessen oder Verweildauer. Bei Trends und Vorschlägen gibt es dagegen »algorithmische Elemente«. Aber keine größer, vertsteckter (engagementbasierter) Algorithmus im normalen Feed. (über Drittanbieter kann man sich, dank der offennen API, sich den Content auch algorithmischer kuratieren lassen, siehe z.B: [Fedialgo](https://github.com/rollecode/fedialgo))
   - Kein übermächtiges *Algo Regime* => Weniger Manipulation, mehr Kontrolle.
   - Nachteil: weniger automatische Empfehlungen und Reichweite => neue Inhalte und Accounts muss man eher selbst suchen.
 
