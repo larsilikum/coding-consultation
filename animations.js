@@ -58,30 +58,30 @@ const indeces = textArray
 
 function animateMap() {
   const randomIndeces = indeces.filter(
-    (c) => Math.random() * 22 < Math.random()
+    (c) => Math.random() * 12 < Math.random()
   );
 
   const bubbles = textArray
     .map((char, index) => ({ char, index }))
     .filter(
       (c) =>
-        c.char === "o" &&
+        c.char === "°" &&
         indeces.findIndex((char) => char.index === c.index) >= 0
     );
   const expandedBubbles = textArray
     .map((char, index) => ({ char, index }))
-    .filter((c) => c.char === "°");
+    .filter((c) => c.char === "-");
   const poppedBubbles = textArray
     .map((char, index) => ({ char, index }))
-    .filter((c) => c.char === "*");
+    .filter((c) => c.char === ".");
   for (const c of randomIndeces) {
-    textArray[c.index] = "o";
+    textArray[c.index] = "°";
   }
   for (const bubble of bubbles) {
-    textArray[bubble.index] = "°";
+    textArray[bubble.index] = "-";
   }
   for (const bubble of expandedBubbles) {
-    textArray[bubble.index] = "*";
+    textArray[bubble.index] = ".";
   }
   for (const pBubble of poppedBubbles) {
     textArray[pBubble.index] = "~";

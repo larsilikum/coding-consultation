@@ -15,12 +15,13 @@ html {
 }
 
 body * :not(#anmelden) {
-  color: white !important;
+  color: white;
 }
 
 #anmelden {
   color: yellow;
   font-size: 1.6rem !important;
+  text-decoration: none;
 }
 
 #sky {
@@ -170,11 +171,14 @@ pre {
 a {
   color: black;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: underline dotted;
+  text-decoration-thickness: .1em;
+  text-underline-offset: 0.05em;
+  
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline wavy;
 }
 
 li {
@@ -214,13 +218,17 @@ aside {
   scrollbar-width: none;
 }
 
+#wigefa > a, #wigefa > a i {
+  color: yellow;
+}
+
 main::-webkit-scrollbar,
 aside::-webkit-scrollbar {
   display: none;
 }
 
 a:hover {
-  pointer: cursor;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 950px) {
